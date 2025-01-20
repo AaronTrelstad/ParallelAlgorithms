@@ -45,14 +45,27 @@ int main()
     free(data_calloc);
 
     /*
-    Stack vs Heap: Statically allocated memory goes on the stack at compile time where as 
+    Stack vs Heap: Statically allocated memory goes on the stack at compile time where as
     dynamically allocated memory goes on heap at runtime. Stack memory is automatically managed by the OS
     and used local variable, return addresses, etc. it is smaller and faster. Heap memory has to be manually
     managed using delete/free it is larger and slower than the stack and stores global values/pointers.
     Stack memory is used for storing temporary values so a deep recursion can lead to a stack overflow
     */
 
-   /*
-   Smart pointers can be used for automatic deallocation and preventing dangling pointers
-   */
+    /*
+    Smart pointers can be used for automatic deallocation and preventing dangling pointers
+    */
+
+    /*
+    Pointer Arithmitic
+    */
+
+    byte data[4] = {1, 2, 3, 4};
+
+    byte *ptr = data;
+
+    std::cout << static_cast<int>(*ptr) << std::endl;
+
+    // This allows you to go out of bounds
+    std::cout << static_cast<int>(*(ptr + 1)) << std::endl;
 }
